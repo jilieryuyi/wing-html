@@ -72,7 +72,7 @@ class Html
     {
         if (isset($this->attr["style"])) {
             $this->attr["style"] = trim($this->attr["style"]);
-            if (strpos($this->attr["style"],";") != (strlen($this->attr["style"]) - 1)
+            if (strpos($this->attr["style"],";") != (strlen($this->attr["style"]) - 1))
                 $this->attr["style"] = $this->attr["style"].";";
             $this->attr["style"] = $this->attr["style"].$css;
         } else {
