@@ -2,8 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: yuyi
- * Date: 17/3/4
+ * Date: 2017-03-05
  * Time: 19:26
+ *
+ * 简单的html构造器
+ *
  */
 class Html
 {
