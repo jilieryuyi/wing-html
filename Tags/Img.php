@@ -13,4 +13,8 @@ class Img extends Html
     {
         parent::__construct("img");
     }
+    public function setSrc($src)
+    {
+        $this->__set("src",$src);
+    }
 }

@@ -10,8 +10,8 @@
  */
 class Html
 {
-    private $tag_name;
-    private $attr;
+    protected $tag_name;
+    protected $attr;
 
     public $html;
 
