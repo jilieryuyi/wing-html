@@ -13,4 +13,8 @@ class Label extends Html
     {
         parent::__construct("label");
     }
+    public function setFor($for)
+    {
+        $this->__set("for",$for);
+    }
 }
