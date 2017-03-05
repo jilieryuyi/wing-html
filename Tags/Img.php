@@ -17,4 +17,9 @@ class Img extends Html
     {
         $this->__set("src",$src);
     }
+
+    public function setAlt($alt)
+    {
+        $this->__set("alt",$alt);
+    }
 }
