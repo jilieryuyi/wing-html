@@ -28,6 +28,8 @@ class Html
 
     /**
      * 判断是否为闭合标签，如果是返回true，否则返回false（自闭合标签返回false）
+     *
+     * @return bool
      */
     public function isClose()
     {
@@ -51,26 +53,54 @@ class Html
         return $this->attr[$name];
     }
 
+    /**
+     * 设置属性
+     *
+     * @param string $name 属性名称
+     * @param string $value 属性值
+     */
     public function setAttr($name, $value)
     {
         $this->__set($name, $value);
     }
 
+    /**
+     * 设置class
+     *
+     * @param string $class
+     */
     public function setClass($class)
     {
         $this->__set("class",$class);
     }
+
+    /**
+     * 添加class
+     *
+     * @param string $class
+     */
     public function addClass($class)
     {
         if (isset($this->attr["class"]))
             $class = $this->attr["class"]." ".$class;
         $this->__set("class",$class);
     }
+
+    /**
+     * 设置样式
+     *
+     * @param string $style
+     */
     public function setStyle($style)
     {
         $this->__set("style",$style);
     }
 
+    /**
+     * 追加样式
+     *
+     * @param string $css
+     */
     public function addCss($css)
     {
         if (isset($this->attr["style"])) {
