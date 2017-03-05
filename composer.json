@@ -1,5 +1,5 @@
 {
-  "name": "Wing/Html",
+  "name": "wing/html",
   "type": "library",
   "description": "简单的html生成器",
   "keywords": ["ylb"],
