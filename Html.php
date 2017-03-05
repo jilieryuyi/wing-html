@@ -64,6 +64,11 @@ class Html
         $this->__set($name, $value);
     }
 
+    public function setId($id)
+    {
+        $this->__set("id",$id);
+    }
+
     /**
      * 设置class
      *
