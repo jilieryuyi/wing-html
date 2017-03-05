@@ -11,7 +11,7 @@
 class Html
 {
     protected $tag_name;
-    protected $attr;
+    protected $attr = [];
 
     public $html;
 
