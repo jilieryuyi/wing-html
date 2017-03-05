@@ -12,13 +12,21 @@ class Html
 
     public $html;
 
+    /**
+     * 构造函数
+     *
+     * @param string $tag_name 标签名称
+     */
     public function __construct($tag_name)
     {
         $this->tag_name = $tag_name;
         $this->html     = "";
     }
 
-    private function isClose()
+    /**
+     * 判断是否为闭合标签，如果是返回true，否则返回false（自闭合标签返回false）
+     */
+    public function isClose()
     {
         if (in_array(strtolower($this->tag_name),[
             "img","br","hr","input","link"
@@ -40,6 +48,43 @@ class Html
         return $this->attr[$name];
     }
 
+    public function setAttr($name, $value)
+    {
+        $this->__set($name, $value);
+    }
+
+    public function setClass($class)
+    {
+        $this->__set("class",$class);
+    }
+    public function addClass($class)
+    {
+        if (isset($this->attr["class"]))
+            $class = $this->attr["class"]." ".$class;
+        $this->__set("class",$class);
+    }
+    public function setStyle($style)
+    {
+        $this->__set("style",$style);
+    }
+
+    public function addCss($css)
+    {
+        if (isset($this->attr["style"])) {
+            $this->attr["style"] = trim($this->attr["style"]);
+            if (strpos($this->attr["style"],";") != (strlen($this->attr["style"]) - 1)
+                $this->attr["style"] = $this->attr["style"].";";
+            $this->attr["style"] = $this->attr["style"].$css;
+        } else {
+            $this->attr["style"] = $css;
+        }
+    }
+
+    /**
+     * 获取最终生成的html
+     *
+     * @return string
+     */
     public function getTtml()
     {
         $html = "<".$this->tag_name;
@@ -56,11 +101,26 @@ class Html
         return $html;
     }
 
+    /**
+     * 添加子标签，addChild为别名函数
+     *
+     * @param string|self
+     */
     public function append($content)
     {
         if ($content instanceof self)
             $this->html .= $content->getTtml();
         else
             $this->html .= $content;
+    }
+
+    /**
+     * 添加子标签，append为别名函数
+     *
+     * @param string|self
+     */
+    public function addChild($content)
+    {
+        $this->append($content);
     }
 }
