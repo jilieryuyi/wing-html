@@ -5,7 +5,7 @@
  * Date: 2017-03-05
  * Time: 19:26
  *
- * 简单的html构造器
+ * 简单的html生成器
  *
  */
 class Html
