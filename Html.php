@@ -69,6 +69,10 @@ class Html
         $this->__set("id",$id);
     }
 
+    public function setContenteditable($enable){
+        $this->__set("contenteditable",$enable?"true":"false");
+    }
+
     /**
      * 设置class
      *
